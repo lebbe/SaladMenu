@@ -15,6 +15,17 @@
  * The concept is dedicated to public domain.
  */
 (function() {
+
+	// Who needs modernizr, just write components that works without JS
+	if( 
+		!document.querySelector ||
+		!document.querySelectorAll ||
+		!window.addEventListener ||
+		!document.body.classList ||
+		!document.body.style ||
+		!('nextElementSibling' in document.body))
+		return;
+
 	// Constants
 	var mobileBreakpoint = 600 // Must be in sync with $mobile-breakpoint
 
