@@ -17,6 +17,10 @@ responsive approach.
 
 * On graphical browsers without javascript, submenus dissappear when navigating with keyboard (I would love input on how to solve this)
 
+# Demo
+
+See the demo here https://lebbe.github.io/SaladMenu/
+
 ## Code example
 
 In the example below you can see I use role, aria-label, aria-haspopup and
