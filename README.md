@@ -16,6 +16,7 @@ responsive approach.
 ## Caveats
 
 * On graphical browsers without javascript, submenus dissappear when navigating with keyboard (I would love input on how to solve this)
+* I do use DOM-API that is not supported in all browsers. Since the menu works without JavaScript, it might not be a big issue, but if some JavaScript works, and other doesn't, the menu might give a buggy experience. (TODO: Only load JavaScript on browsers that supports all the API-calls I use.)
 
 # Demo
 
