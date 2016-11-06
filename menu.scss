@@ -1,0 +1,173 @@
+/**
+ * Salad Menu, instead of hamburgers and kebabs.
+ *
+ * Salad Menu, version 0.1.0.
+ *
+ * Let us stop hiding away the menus!
+ *
+ * People who don't know what three lines means can use it.
+ * People who use browsers without javascript support can use it.
+ * Even blind people should be able to use this menu with ease.
+ *
+ * Code Copyright Lars-Erik Bruce 2016 and available through github
+ * with standard MIT license.
+ *
+ * The concept is dedicated to public domain.
+ */
+@import 'fluid-type';
+
+$logo-width: 155px;
+$mobile-breakpoint: 600px;
+$mobile-header-padding: 20px;
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+header {
+	background-color: #349580;
+	color: white;
+	font-family: Arial, sans-serif;
+	display: flex;
+	flex-wrap: wrap;
+	padding: 0 $mobile-header-padding 10px;
+
+	// Submenus take full width of screen until this breakpoint
+	@media (min-width: $mobile-breakpoint) {
+		padding: 0;
+	}
+}
+
+header h1 {
+	height: 40px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    text-align: left;
+
+    flex-basis: $logo-width;
+    flex-shrink: 0;
+}
+
+header h1 img {
+	height: 36px;
+	width: $logo-width;
+	padding-top: 3px;
+}
+
+.salad-menu {
+	flex-basis: $mobile-breakpoint - $logo-width;
+    flex-grow: 1;
+
+	@include fluid-type(font-size, 320px, 800px, 16px, 18px);
+}
+
+.salad-menu-list {
+	margin: 0;
+	padding: 0;
+	position: relative;
+	text-align: justify; // fall back for display: flex;
+	display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    // Submenus take full width of screen until this breakpoint
+	@media (min-width: $mobile-breakpoint) {
+		justify-content: flex-start;
+	}
+}
+
+.salad-submenu-list-item,
+.salad-menu-list-item {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	//
+}
+
+.salad-menu-link {
+	text-decoration: none;
+	color: white;
+	height: 14px;
+	line-height: 14px;
+	list-style-image: none;
+	list-style-position: outside;
+	list-style-type: none;
+	@include fluid-type(padding-left, 320px, 800px, 5px, 10px);
+	@include fluid-type(padding-right, 320px, 800px, 10px, 23px);
+	@include fluid-type(padding-bottom padding-top, 320px, 800px, 6px, 13px);
+	position: relative;
+	display: inline-block;
+}
+
+.salad-menu-link:hover,
+.salad-menu-link:focus {
+	background-color: #2c806e;
+	outline: none;
+}
+
+.salad-menu-link--submenu {
+	padding-right: 20px;
+}
+
+.salad-menu-link--submenu:after {
+	border: 4px solid transparent;
+	border-top-color: #fff;
+	content: "";
+	height: 0;
+	opacity: 0.8;
+	right: 2px;
+	position: absolute;
+	text-indent: -99999px;
+	top: 50%;
+	width: 0;
+}
+
+
+.salad-submenu-list {
+	margin: 0;
+	padding: 10px $mobile-header-padding;
+	position: absolute;
+    background-color: #297565;
+    top: 100%;
+    width: 100vw;
+    left: 0;
+	z-index: 1;
+    // Hide the menu from screen, but not from screen readers
+    margin-left: -999999px;
+
+    // Make sure dropdown menu doesn't trunkate
+	white-space: nowrap;
+
+	// Submenus take full width of screen until this breakpoint
+	@media (min-width: $mobile-breakpoint) {
+		width: auto;
+		left: initial;
+		padding: 0;
+	}
+}
+
+.salad-menu-link:focus + .salad-submenu-list {
+	margin-left: 0;
+
+	@media (max-width: $mobile-breakpoint - 1) {
+		margin-left: -$mobile-header-padding;
+	}
+}
+
+
+.salad-submenu-list-item {
+	display: block;
+
+    // Make sub-menu link take full width of li
+    display: flex;
+    .salad-menu-link {
+    	flex-grow: 1;
+    }
+
+}
+
+
+
