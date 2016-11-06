@@ -91,6 +91,7 @@
 
 				if(!activeSubmenu) return
 				activeSubmenu.style.marginLeft = ''
+				activeSubmenu.style.right = ''
 				activeSubmenu.parentNode.setAttribute('aria-expanded', 'false')
 			}
 		})
@@ -111,6 +112,8 @@
 				if(!activeSubmenu) return
 
 				activeSubmenu.style.marginLeft = ''
+				activeSubmenu.style.right = ''
+
 				activeSubmenu.parentNode.setAttribute('aria-expanded', 'false')
 			}, 1000)
 		})
