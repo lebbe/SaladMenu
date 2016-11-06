@@ -38,6 +38,13 @@
 	var activeSubmenu
 	var mouseoutTimer
 
+	function closeActiveSubmenu() {
+		if(!activeSubmenu) return
+		activeSubmenu.style.marginLeft = ''
+		activeSubmenu.style.right = ''
+		activeSubmenu.parentNode.setAttribute('aria-expanded', 'false')
+	}
+
 	function runProgJs() {
 		saladmenu = document.querySelector('nav.salad-menu')
 		submenus = document.querySelectorAll('.salad-menu-link')
@@ -50,8 +57,7 @@
 				if(activeSubmenu) {
 					if(activeSubmenu.contains(e.target)) return
 
-					activeSubmenu.style.marginLeft = ''
-					activeSubmenu.parentNode.setAttribute('aria-expanded', 'false')
+					closeActiveSubmenu()
 				}
 
 				menuActive = true
@@ -101,10 +107,7 @@
 			if(!insideMenu(e.target) && menuActive) {
 				menuActive = false
 
-				if(!activeSubmenu) return
-				activeSubmenu.style.marginLeft = ''
-				activeSubmenu.style.right = ''
-				activeSubmenu.parentNode.setAttribute('aria-expanded', 'false')
+				closeActiveSubmenu()
 			}
 		})
 
@@ -121,12 +124,7 @@
 
 				menuActive = false
 
-				if(!activeSubmenu) return
-
-				activeSubmenu.style.marginLeft = ''
-				activeSubmenu.style.right = ''
-
-				activeSubmenu.parentNode.setAttribute('aria-expanded', 'false')
+				closeActiveSubmenu()
 			}, 1000)
 		})
 
