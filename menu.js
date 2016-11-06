@@ -55,6 +55,8 @@
 				var location = e.target.getBoundingClientRect()
 				activeSubmenu = e.target.nextElementSibling
 
+				activeSubmenu.parentNode.setAttribute('aria-expanded', 'true')
+
 				// Place submenu right below button that opens it
 				activeSubmenu.style.top = parseInt(location.bottom, 10) + 'px'
 
