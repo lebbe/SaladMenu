@@ -1,0 +1,160 @@
+/**
+ * Salad Menu, instead of hamburgers and kebabs.
+ *
+ * Salad Menu, version 0.1.0.
+ *
+ * Let us stop hiding away the menus!
+ *
+ * People who don't know what three lines means can use it.
+ * People who use browsers without javascript support can use it.
+ * Even blind people should be able to use this menu with ease.
+ *
+ * Code Copyright Lars-Erik Bruce 2016 and available through github
+ * with standard MIT license.
+ *
+ * The concept is dedicated to public domain.
+ */
+body {
+  margin: 0;
+  padding: 0; }
+
+header {
+  background-color: #349580;
+  color: white;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 20px 10px; }
+  @media (min-width: 600px) {
+    header {
+      padding: 0; } }
+
+header h1 {
+  height: 40px;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  text-align: left;
+  flex-basis: 155px;
+  flex-shrink: 0; }
+
+header h1 img {
+  height: 36px;
+  width: 155px;
+  padding-top: 3px; }
+
+.salad-menu {
+  flex-basis: 445px;
+  flex-grow: 1;
+  font-size: 16px; }
+  @media screen and (min-width: 320px) {
+    .salad-menu {
+      font-size: calc(16px + 2 * (100vw - 320px) / 480); } }
+  @media screen and (min-width: 800px) {
+    .salad-menu {
+      font-size: 18px; } }
+
+.salad-menu-list {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  text-align: justify;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; }
+  @media (min-width: 600px) {
+    .salad-menu-list {
+      justify-content: flex-start; } }
+
+.salad-submenu-list-item,
+.salad-menu-list-item {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: inline-block; }
+
+.salad-menu-link {
+  text-decoration: none;
+  color: white;
+  height: 14px;
+  line-height: 14px;
+  list-style-image: none;
+  list-style-position: outside;
+  list-style-type: none;
+  padding-left: 5px;
+  padding-right: 10px;
+  padding-bottom: 6px;
+  padding-top: 6px;
+  position: relative;
+  display: inline-block; }
+  @media screen and (min-width: 320px) {
+    .salad-menu-link {
+      padding-left: calc(5px + 5 * (100vw - 320px) / 480); } }
+  @media screen and (min-width: 800px) {
+    .salad-menu-link {
+      padding-left: 10px; } }
+  @media screen and (min-width: 320px) {
+    .salad-menu-link {
+      padding-right: calc(10px + 13 * (100vw - 320px) / 480); } }
+  @media screen and (min-width: 800px) {
+    .salad-menu-link {
+      padding-right: 23px; } }
+  @media screen and (min-width: 320px) {
+    .salad-menu-link {
+      padding-bottom: calc(6px + 7 * (100vw - 320px) / 480);
+      padding-top: calc(6px + 7 * (100vw - 320px) / 480); } }
+  @media screen and (min-width: 800px) {
+    .salad-menu-link {
+      padding-bottom: 13px;
+      padding-top: 13px; } }
+
+.salad-menu-link:hover,
+.salad-menu-link:focus {
+  background-color: #2c806e;
+  outline: none; }
+
+.salad-menu-link--submenu {
+  padding-right: 20px; }
+
+.salad-menu-link--submenu:after {
+  border: 4px solid transparent;
+  border-top-color: #fff;
+  content: "";
+  height: 0;
+  opacity: 0.8;
+  right: 2px;
+  position: absolute;
+  text-indent: -99999px;
+  top: 50%;
+  width: 0; }
+
+.salad-submenu-list {
+  margin: 0;
+  padding: 10px 20px;
+  position: absolute;
+  background-color: #297565;
+  top: 100%;
+  width: 100vw;
+  left: 0;
+  z-index: 1;
+  margin-left: -999999px;
+  white-space: nowrap; }
+  @media (min-width: 600px) {
+    .salad-submenu-list {
+      width: auto;
+      left: initial;
+      padding: 0; } }
+
+.salad-menu-list-item:hover .salad-submenu-list,
+.salad-menu-link:focus + .salad-submenu-list {
+  margin-left: 0; }
+  @media (max-width: 599px) {
+    .salad-menu-list-item:hover .salad-submenu-list,
+    .salad-menu-link:focus + .salad-submenu-list {
+      margin-left: -20px; } }
+
+.salad-submenu-list-item {
+  display: block;
+  display: flex; }
+  .salad-submenu-list-item .salad-menu-link {
+    flex-grow: 1; }
