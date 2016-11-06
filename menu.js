@@ -70,7 +70,6 @@
 			})
 
 			a.addEventListener('mouseover', function mouseOver(e) {
-				if(!menuActive) return
 				if(activeSubmenu && activeSubmenu.contains(e.target)) return
 
 				e.target.focus()

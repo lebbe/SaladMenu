@@ -149,6 +149,7 @@ header h1 img {
 	}
 }
 
+.salad-menu-list-item:hover .salad-submenu-list,
 .salad-menu-link:focus + .salad-submenu-list {
 	margin-left: 0;
 
