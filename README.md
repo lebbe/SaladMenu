@@ -16,7 +16,6 @@ responsive approach.
 ## Caveats
 
 * On graphical browsers without javascript, submenus dissappear when navigating with keyboard (I would love input on how to solve this)
-* JavaScript sets window.onclick, etc. Doesn't work well with existing JavaScript (TODO: Use addEventListener instead!)
 
 ## Code example
 
